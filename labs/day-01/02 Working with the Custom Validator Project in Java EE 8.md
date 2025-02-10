@@ -64,7 +64,6 @@ In this lab, you will:
 
 ---
 
-
 ### **Step 3: Test the Application**
 
 1.  Open a browser and go to `http://localhost:8080/jsfcustomval`.
@@ -100,7 +99,7 @@ You will enhance the project by adding a new custom validator that ensures the p
       // ... package and imports ... goes here, if needed
 
       @FacesValidator("emailValidator")
-      public class EmailValidator implements Validator {
+      public class MyEmailValidator implements Validator {
           @Override
           public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
               String email = value.toString();
