@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:x="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <x:head>
+        <title>Enter Customer Data</title>
+    </x:head>
+    <x:body>
+        <x:outputStylesheet library="css" name="styles.css"/>
+        <x:form id="customerForm">
+            <x:messages/>
+            <x:panelGrid columns="2"
+                         columnClasses="rightAlign,leftAlign">
+                <x:outputLabel for="firstName" value="First Name:">
+                </x:outputLabel>
+                <x:inputText id="firstName"
+                             label="First Name"
+                             value="#{customer.firstName}"
+                             required="true">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </x:inputText>
+                <x:outputLabel for="lastName" value="Last Name:">
+                </x:outputLabel>
+                <x:inputText id="lastName"
+                             label="Last Name"
+                             value="#{customer.lastName}"
+                             required="true">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </x:inputText>
+                <x:outputLabel for="email" value="Email:">
+                </x:outputLabel>
+                <x:inputText id="email"
+                             label="Email" 
+                             value="#{customer.email}">
+                    <f:validateLength minimum="3" maximum="30">
+                    </f:validateLength>
+                </x:inputText>
+                <x:panelGroup></x:panelGroup>
+                <x:commandButton action="confirmation" value="Save">
+                </x:commandButton>
+            </x:panelGrid>
+        </x:form>
+    </x:body>
+</html>
+
